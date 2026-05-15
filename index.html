@@ -225,14 +225,20 @@
       min-height: 100svh;
       flex-direction: column;
       align-items: flex-start;
+      overflow: hidden;
     }
+    #hero > div { width: 100%; }
     #hero::after { display: none; }
 
-    /* Esconde gráfico de escudo no mobile — ocupa espaço sem legibilidade */
+    /* Esconde gráfico de escudo no mobile */
     .hero-graphic { display: none; }
 
-    h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
-    .hero-sub { font-size: .95rem; max-width: 100%; margin-top: 1.2rem; }
+    h1 {
+      font-size: clamp(2rem, 10vw, 3rem);
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .hero-sub { font-size: .92rem; max-width: 100%; margin-top: 1.2rem; line-height: 1.7; }
 
     .hero-actions {
       flex-direction: column;
@@ -324,9 +330,13 @@
     /* FOOTER */
     footer {
       flex-direction: column;
+      align-items: center;
       text-align: center;
-      gap: .6rem;
+      gap: .75rem;
       padding: 2rem 1.25rem 2.5rem;
+    }
+    footer .logo {
+      justify-content: center;
     }
 
     /* H2 ajuste geral */
