@@ -199,6 +199,156 @@
   footer{position:relative;z-index:2;padding:2.5rem 4rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
   footer p{font-size:.78rem;color:var(--muted);}
   .footer-stripe{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red) 0%,var(--red) 33.3%,rgba(255,255,255,0.8) 33.3%,rgba(255,255,255,0.8) 66.6%,var(--blue) 66.6%,var(--blue) 100%);opacity:.35;}
+
+  /* =====================================================
+     MOBILE — até 768px
+     ===================================================== */
+  @media (max-width: 768px) {
+
+    /* Esconde cursor customizado em touch */
+    body { cursor: auto; }
+    #cursor, #cursor-trail { display: none; }
+    .btn-primary, .btn-secondary, .btn-full, .nav-cta { cursor: pointer; }
+
+    /* NAV */
+    nav {
+      padding: .9rem 1.25rem;
+      gap: .75rem;
+    }
+    nav ul { display: none; }
+    .logo { font-size: 1rem; }
+    .nav-cta { padding: .5rem 1.1rem; font-size: .8rem; white-space: nowrap; }
+
+    /* HERO */
+    #hero {
+      padding: 7rem 1.25rem 14rem;
+      min-height: 100svh;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #hero::after { display: none; }
+
+    /* Esconde gráfico de escudo no mobile — ocupa espaço sem legibilidade */
+    .hero-graphic { display: none; }
+
+    h1 { font-size: clamp(2.6rem, 12vw, 4rem); }
+    .hero-sub { font-size: .95rem; max-width: 100%; margin-top: 1.2rem; }
+
+    .hero-actions {
+      flex-direction: column;
+      gap: .75rem;
+      margin-top: 2rem;
+    }
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      text-align: center;
+      padding: .95rem 1.5rem;
+      font-size: .95rem;
+    }
+
+    /* STATS BAR */
+    .hero-stats {
+      left: 1.25rem;
+      right: 1.25rem;
+      bottom: 1.5rem;
+      flex-wrap: wrap;
+      border-radius: 14px;
+    }
+    .stat {
+      flex: 1 1 calc(50% - 1px);
+      padding: 1rem 1rem;
+      min-width: 0;
+    }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(3) { border-top: 1px solid var(--border); }
+    .stat:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+    .sn { font-size: 1.45rem; }
+    .sl { font-size: .72rem; }
+    .stat-icon { width: 34px; height: 34px; }
+
+    /* SECTIONS */
+    section { padding: 4rem 1.25rem; }
+
+    /* SERVICES GRID */
+    .svc-grid {
+      grid-template-columns: 1fr;
+      margin-top: 2rem;
+      gap: 1px;
+    }
+    .svc-card { padding: 1.8rem 1.4rem; }
+
+    /* LIVE CAMERAS */
+    #live { padding: 4rem 1.25rem; }
+    .live-hdr {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .cam-grid {
+      grid-template-columns: 1fr;
+      gap: .75rem;
+    }
+
+    /* WHY */
+    .why-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    /* Radar visual fica menor e centralizado */
+    .why-visual {
+      height: 260px;
+      order: -1; /* aparece antes da lista no mobile */
+    }
+
+    /* TESTIMONIAL */
+    #testimonial { padding: 4rem 1.25rem; }
+    blockquote { font-size: clamp(1.2rem, 5.5vw, 1.8rem); }
+
+    /* CTA */
+    #cta {
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 4rem 1.25rem;
+      align-items: stretch;
+    }
+    .cta-card {
+      flex: none;
+      width: 100%;
+    }
+    #cta .btn-primary, #cta .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+      flex-direction: column;
+      text-align: center;
+      gap: .6rem;
+      padding: 2rem 1.25rem 2.5rem;
+    }
+
+    /* H2 ajuste geral */
+    h2 { font-size: clamp(1.75rem, 7vw, 2.6rem); }
+  }
+
+  /* Tablet médio — 769px a 1024px */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    nav { padding: 1rem 2rem; }
+    nav ul { gap: 1.5rem; }
+
+    #hero { padding: 8rem 2.5rem 5rem; }
+    .hero-graphic { width: 300px; height: 300px; right: 1.5rem; }
+    .hero-stats { left: 2.5rem; right: 2.5rem; }
+
+    section { padding: 5rem 2.5rem; }
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    .cam-grid { grid-template-columns: 1fr; gap: .85rem; }
+    .why-layout { gap: 3rem; }
+    #cta { gap: 3rem; padding: 5rem 2.5rem; }
+    footer { padding: 2rem 2.5rem; }
+  }
 </style>
 </head>
 <body>
